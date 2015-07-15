@@ -1,0 +1,122 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/breeds#",
+
+	"blocks":{
+		"baseData":{
+			"title": "Základné údaje",
+			"transCode":"schema.breeds.baseData",
+			"type": "object",
+			"properties": {
+				"name": {
+					"title": "Názov",
+					"transCode":"schema.breeds.name",
+					"type": "string",
+					"required": true
+				},
+				"shortName": {
+					"title": "Skrátený názov",
+					"transCode":"schema.breeds.shortName",
+					"type": "string",
+					"required": true
+				},
+				"group": {
+					"title": "Skupina",
+					"transCode": "schema.breeds.group",
+					"type": "string",
+					"required": true,
+					"enum": [
+						"Skupina I",
+						"Skupina II",
+						"Skupina III",
+						"Skupina IV",
+						"Predbežne uznané plemená",
+						"Domáca mačka"
+					],
+					"render": {
+						"component": "psui-selectbox",
+						"searchable": false
+					}
+				},
+				"display": {
+					"extends": "uri://registries/commonenums#blocks/boolean",
+					"title": "Zobrazovať",
+					"transCode": "schema.breeds.display",
+					"type": "string",
+					"required": true
+				}
+			}
+		}
+	},
+
+	"models":{
+		"breeds":{
+			"table" : "breeds",
+			"title" : "Chovné plemeno",
+			"transCode":"schema.breeds.title",
+			"security": {
+				"create": {
+					"static": [
+						"Registry - write"
+					]
+				},
+				"read": {
+					"static": [
+						"Registry - read"
+					]
+				},
+				"modify": {
+					"static": [
+						"Registry - write"
+					]
+				}
+			},
+			"properties":{
+				"baseData":{
+					"$ref":"uri://registries/breeds#blocks/baseData"
+				}
+			}
+		}
+	},
+
+	"views":{
+		"breeds":{
+			"new":{
+				"$ref":"uri://registries/breeds#models/breeds"
+			},
+			"view":{
+				"$ref":"uri://registries/breeds#models/breeds"
+			},
+			"search":{
+				"extends":"uri://registries/breeds#models/breeds",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fbreeds~23views~2Fbreeds/{{model.id}}"
+						}
+					}
+				],
+				"listFields": [
+					{
+						"field":"baseData.name",
+						"title":"Názov",
+						"transCode":"schema.breeds.name"
+					},
+					{
+						"field":"baseData.group",
+						"title":"Skupina",
+						"transCode":"schema.breeds.group"
+					},
+					{
+						"field":"baseData.display",
+						"title":"Zobrazovať",
+						"transCode":"schema.breeds.display"
+					}
+				]
+			}
+		}
+
+	}
+}
