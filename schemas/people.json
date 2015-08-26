@@ -85,7 +85,7 @@
 					"transCode":"schema.people.breed",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/breeds#views/breed/view",
+						"schema":"uri://registries/breeds#views/breeds/view",
 						"fields":{
 							"name": "baseData.name"
 						}
