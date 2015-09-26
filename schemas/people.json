@@ -255,15 +255,7 @@
 				}
 			},
 			"view":{
-				"extends":"uri://registries/people#models/fullperson",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "action-link",
-						"title": "Tlač hráčskej licencie",
-						"schema": "uri://registries/people#views/fullperson/view",
-						"template": "playerLicenseCard.html"
-					}
-				]
+				"extends":"uri://registries/people#models/fullperson"
 			},
 			"search":{
 				"extends":"uri://registries/people#models/fullperson",
