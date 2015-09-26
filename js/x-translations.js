@@ -344,7 +344,8 @@ angular.module('x-registries')
 		"schema.security.listFields.name":"Názov profilu",
 		"schema.security.baseData.name":"Názov profilu",
 		"schema.security.baseData":"Základné údaje",
-		"schema.securityMaster.title":"Bezpečnostný profil"
+		"schema.securityMaster.title":"Bezpečnostný profil",
+		"schema.member.view":"Osoba"
 	});
 	
 	$translateProvider.translations('cz', {
@@ -642,8 +643,8 @@ angular.module('x-registries')
 		"schema.mailTemplate.basedata.html":"HTML vzor",
 		"schema.mailTemplate.listFields.title":"Názov vzoru",
 
-		"schema.member.title": "Môj profil",
-		"schema.member.view":"Profil člena"
+		"schema.member.title":"Môj profil",
+		"schema.member.view":"Osoba"
 	});
 }]);
 }(angular));

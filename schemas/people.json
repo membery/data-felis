@@ -85,7 +85,7 @@
 					"transCode":"schema.people.breed",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/breeds#views/breed/view",
+						"schema":"uri://registries/breeds#views/breeds/view",
 						"fields":{
 							"name": "baseData.name"
 						}
@@ -255,15 +255,7 @@
 				}
 			},
 			"view":{
-				"extends":"uri://registries/people#models/fullperson",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "action-link",
-						"title": "Tlač hráčskej licencie",
-						"schema": "uri://registries/people#views/fullperson/view",
-						"template": "playerLicenseCard.html"
-					}
-				]
+				"extends":"uri://registries/people#models/fullperson"
 			},
 			"search":{
 				"extends":"uri://registries/people#models/fullperson",
